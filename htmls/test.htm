@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>MNIST下，使用WRes各个不同的DPCR模型的不同迭代次数对于学习效果的影响（精度）</title>
+                <script type="text/javascript" src="https://assets.pyecharts.org/assets/v5/echarts.min.js"></script>
+
+</head>
+<body >
+    <div id="b8e2581c7d1f4c4f81ca2142c694e695" class="chart-container" style="width:800px; height:640px; "></div>
+    <script>
+        var chart_b8e2581c7d1f4c4f81ca2142c694e695 = echarts.init(
+            document.getElementById('b8e2581c7d1f4c4f81ca2142c694e695'), 'white', {renderer: 'canvas'});
+        var option_b8e2581c7d1f4c4f81ca2142c694e695 = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "aria": {
+        "enabled": false
+    },
+    "color": [
+        "#5470c6",
+        "#91cc75",
+        "#fac858",
+        "#ee6666",
+        "#73c0de",
+        "#3ba272",
+        "#fc8452",
+        "#9a60b4",
+        "#ea7ccc"
+    ],
+    "series": [
+        {
+            "type": "line",
+            "name": "SimpleMech",
+            "connectNulls": false,
+            "xAxisIndex": 0,
+            "symbolSize": 4,
+            "showSymbol": true,
+            "smooth": false,
+            "clip": true,
+            "step": false,
+            "data": [
+                [
+                    1000,
+                    0.572
+                ],
+                [
+                    2000,
+                    0.5879
+                ],
+                [
+                    5000,
+                    0.6591
+                ],
+                [
+                    10000,
+                    0.8044333333333333
+                ],
+                [
+                    20000,
+                    0.8782
+                ],
+                [
+                    50000,
+                    0.8763
+                ],
+                [
+                    100000,
+                    0.7770333333333332
+                ]
+            ],
+            "hoverAnimation": true,
+            "label": {
+                "show": true,
+                "margin": 8
+            },
+            "logBase": 10,
+            "seriesLayoutBy": "column",
+            "lineStyle": {
+                "show": true,
+                "width": 1,
+                "opacity": 1,
+                "curveness": 0,
+                "type": "solid"
+            },
+            "areaStyle": {
+                "opacity": 0
+            },
+            "zlevel": 0,
+            "z": 0
+        },
+        {
+            "type": "line",
+            "name": "TwoLevel",
+            "connectNulls": false,
+            "xAxisIndex": 0,
+            "symbolSize": 4,
+            "showSymbol": true,
+            "smooth": false,
+            "clip": true,
+            "step": false,
+            "data": [
+                [
+                    1000,
+                    0.6007333333333333
+                ],
+                [
+                    2000,
+                    0.5819
+                ],
+                [
+                    5000,
+                    0.6787666666666667
+                ],
+                [
+                    10000,
+                    0.7335666666666666
+                ],
+                [
+                    20000,
+                    0.8079999999999999
+                ],
+                [
+                    50000,
+                    0.8766666666666666
+                ],
+                [
+                    100000,
+                    0.9048333333333334
+                ]
+            ],
+            "hoverAnimation": true,
+            "label": {
+                "show": true,
+                "margin": 8
+            },
+            "logBase": 10,
+            "seriesLayoutBy": "column",
+            "lineStyle": {
+                "show": true,
+                "width": 1,
+                "opacity": 1,
+                "curveness": 0,
+                "type": "solid"
+            },
+            "areaStyle": {
+                "opacity": 0
+            },
+            "zlevel": 0,
+            "z": 0
+        },
+        {
+            "type": "line",
+            "name": "BinMech",
+            "connectNulls": false,
+            "xAxisIndex": 0,
+            "symbolSize": 4,
+            "showSymbol": true,
+            "smooth": false,
+            "clip": true,
+            "step": false,
+            "data": [
+                [
+                    1000,
+                    0.5075666666666667
+                ],
+                [
+                    2000,
+                    0.4817666666666666
+                ],
+                [
+                    5000,
+                    0.48593333333333333
+                ],
+                [
+                    10000,
+                    0.4237333333333333
+                ],
+                [
+                    20000,
+                    0.2719
+                ],
+                [
+                    50000,
+                    0.14323333333333335
+                ],
+                [
+                    100000,
+                    0.1084
+                ]
+            ],
+            "hoverAnimation": true,
+            "label": {
+                "show": true,
+                "margin": 8
+            },
+            "logBase": 10,
+            "seriesLayoutBy": "column",
+            "lineStyle": {
+                "show": true,
+                "width": 1,
+                "opacity": 1,
+                "curveness": 0,
+                "type": "solid"
+            },
+            "areaStyle": {
+                "opacity": 0
+            },
+            "zlevel": 0,
+            "z": 0
+        },
+        {
+            "type": "line",
+            "name": "Honaker",
+            "connectNulls": false,
+            "xAxisIndex": 0,
+            "symbolSize": 4,
+            "showSymbol": true,
+            "smooth": false,
+            "clip": true,
+            "step": false,
+            "data": [
+                [
+                    1000,
+                    0.6548333333333334
+                ],
+                [
+                    2000,
+                    0.7353333333333333
+                ],
+                [
+                    5000,
+                    0.7577333333333334
+                ],
+                [
+                    10000,
+                    0.8106
+                ],
+                [
+                    20000,
+                    0.8200666666666666
+                ],
+                [
+                    50000,
+                    0.7209
+                ],
+                [
+                    100000,
+                    0.5890333333333334
+                ]
+            ],
+            "hoverAnimation": true,
+            "label": {
+                "show": true,
+                "margin": 8
+            },
+            "logBase": 10,
+            "seriesLayoutBy": "column",
+            "lineStyle": {
+                "show": true,
+                "width": 1,
+                "opacity": 1,
+                "curveness": 0,
+                "type": "solid"
+            },
+            "areaStyle": {
+                "opacity": 0
+            },
+            "zlevel": 0,
+            "z": 0
+        },
+        {
+            "type": "line",
+            "name": "FDA",
+            "connectNulls": false,
+            "xAxisIndex": 0,
+            "symbolSize": 4,
+            "showSymbol": true,
+            "smooth": false,
+            "clip": true,
+            "step": false,
+            "data": [
+                [
+                    1000,
+                    0.23183333333333334
+                ],
+                [
+                    2000,
+                    0.21893333333333334
+                ],
+                [
+                    5000,
+                    0.13586666666666666
+                ],
+                [
+                    10000,
+                    0.10473333333333333
+                ],
+                [
+                    20000,
+                    0.10216666666666667
+                ],
+                [
+                    50000,
+                    0.10089999999999999
+                ],
+                [
+                    100000,
+                    0.10326666666666666
+                ]
+            ],
+            "hoverAnimation": true,
+            "label": {
+                "show": true,
+                "margin": 8
+            },
+            "logBase": 10,
+            "seriesLayoutBy": "column",
+            "lineStyle": {
+                "show": true,
+                "width": 1,
+                "opacity": 1,
+                "curveness": 0,
+                "type": "solid"
+            },
+            "areaStyle": {
+                "opacity": 0
+            },
+            "zlevel": 0,
+            "z": 0
+        },
+        {
+            "type": "line",
+            "name": "BCRG",
+            "connectNulls": false,
+            "xAxisIndex": 0,
+            "symbolSize": 4,
+            "showSymbol": true,
+            "smooth": false,
+            "clip": true,
+            "step": false,
+            "data": [
+                [
+                    1000,
+                    0.6624666666666666
+                ],
+                [
+                    2000,
+                    0.6987666666666668
+                ],
+                [
+                    5000,
+                    0.7157666666666668
+                ],
+                [
+                    10000,
+                    0.7069666666666666
+                ],
+                [
+                    20000,
+                    0.7160000000000001
+                ],
+                [
+                    50000,
+                    0.6230333333333334
+                ],
+                [
+                    100000,
+                    0.1135
+                ]
+            ],
+            "hoverAnimation": true,
+            "label": {
+                "show": true,
+                "margin": 8
+            },
+            "logBase": 10,
+            "seriesLayoutBy": "column",
+            "lineStyle": {
+                "show": true,
+                "width": 1,
+                "opacity": 1,
+                "curveness": 0,
+                "type": "solid"
+            },
+            "areaStyle": {
+                "opacity": 0
+            },
+            "zlevel": 0,
+            "z": 0
+        },
+        {
+            "type": "line",
+            "name": "ABCRG",
+            "connectNulls": false,
+            "xAxisIndex": 0,
+            "symbolSize": 4,
+            "showSymbol": true,
+            "smooth": false,
+            "clip": true,
+            "step": false,
+            "data": [
+                [
+                    1000,
+                    0.7035
+                ],
+                [
+                    2000,
+                    0.7401333333333334
+                ],
+                [
+                    5000,
+                    0.7569333333333333
+                ],
+                [
+                    10000,
+                    0.8279666666666667
+                ],
+                [
+                    20000,
+                    0.8507333333333333
+                ],
+                [
+                    50000,
+                    0.8384666666666667
+                ],
+                [
+                    100000,
+                    0.7695
+                ]
+            ],
+            "hoverAnimation": true,
+            "label": {
+                "show": true,
+                "margin": 8
+            },
+            "logBase": 10,
+            "seriesLayoutBy": "column",
+            "lineStyle": {
+                "show": true,
+                "width": 1,
+                "opacity": 1,
+                "curveness": 0,
+                "type": "solid"
+            },
+            "areaStyle": {
+                "opacity": 0
+            },
+            "zlevel": 0,
+            "z": 0
+        },
+        {
+            "type": "line",
+            "name": "OCRHBComp",
+            "connectNulls": false,
+            "xAxisIndex": 0,
+            "symbolSize": 4,
+            "showSymbol": true,
+            "smooth": false,
+            "clip": true,
+            "step": false,
+            "data": [
+                [
+                    1000,
+                    0.714
+                ],
+                [
+                    2000,
+                    0.7475999999999999
+                ],
+                [
+                    5000,
+                    0.7869
+                ],
+                [
+                    10000,
+                    0.8737666666666667
+                ],
+                [
+                    20000,
+                    0.8912
+                ],
+                [
+                    50000,
+                    0.8680666666666667
+                ],
+                [
+                    100000,
+                    0.7872
+                ]
+            ],
+            "hoverAnimation": true,
+            "label": {
+                "show": true,
+                "margin": 8
+            },
+            "logBase": 10,
+            "seriesLayoutBy": "column",
+            "lineStyle": {
+                "show": true,
+                "width": 1,
+                "opacity": 1,
+                "curveness": 0,
+                "type": "solid"
+            },
+            "areaStyle": {
+                "opacity": 0
+            },
+            "zlevel": 0,
+            "z": 0
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                "SimpleMech",
+                "TwoLevel",
+                "BinMech",
+                "Honaker",
+                "FDA",
+                "BCRG",
+                "ABCRG",
+                "OCRHBComp"
+            ],
+            "selected": {},
+            "show": true,
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14,
+            "backgroundColor": "transparent",
+            "borderColor": "#ccc",
+            "borderWidth": 1,
+            "borderRadius": 0,
+            "pageButtonItemGap": 5,
+            "pageButtonPosition": "end",
+            "pageFormatter": "{current}/{total}",
+            "pageIconColor": "#2f4554",
+            "pageIconInactiveColor": "#aaa",
+            "pageIconSize": 15,
+            "animationDurationUpdate": 800,
+            "selector": false,
+            "selectorPosition": "auto",
+            "selectorItemGap": 7,
+            "selectorButtonGap": 10
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "enterable": false,
+        "confine": false,
+        "appendToBody": false,
+        "transitionDuration": 0.4,
+        "formatter": "{a}: ({c}, {b})",
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0,
+        "padding": 5,
+        "order": "seriesAsc"
+    },
+    "xAxis": [
+        {
+            "type": "log",
+            "name": "\u603b\u8fed\u4ee3\u6b21\u6570",
+            "show": true,
+            "scale": false,
+            "nameLocation": "center",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": true,
+                "lineStyle": {
+                    "show": true,
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            },
+            "data": [
+                1000,
+                2000,
+                5000,
+                10000,
+                20000,
+                50000,
+                100000
+            ]
+        }
+    ],
+    "yAxis": [
+        {
+            "type": "value",
+            "name": "Accuracy",
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "axisTick": {
+                "show": false,
+                "alignWithLabel": false,
+                "inside": false
+            },
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": true,
+                "lineStyle": {
+                    "show": true,
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            }
+        }
+    ],
+    "title": [
+        {
+            "show": true,
+            "text": "MNIST\u4e0b\uff0c\u4f7f\u7528WRes\u5404\u4e2a\u4e0d\u540c\u7684DPCR\u6a21\u578b\u7684\u4e0d\u540c\u8fed\u4ee3\u6b21\u6570\u5bf9\u4e8e\u5b66\u4e60\u6548\u679c\u7684\u5f71\u54cd\uff08\u7cbe\u5ea6\uff09",
+            "target": "blank",
+            "subtarget": "blank",
+            "padding": 5,
+            "itemGap": 10,
+            "textAlign": "auto",
+            "textVerticalAlign": "auto",
+            "triggerEvent": false
+        }
+    ],
+    "dataZoom": [
+        {
+            "show": true,
+            "type": "inside",
+            "showDetail": true,
+            "showDataShadow": true,
+            "realtime": true,
+            "start": 20,
+            "end": 80,
+            "orient": "horizontal",
+            "zoomLock": false,
+            "filterMode": "filter"
+        },
+        {
+            "show": true,
+            "type": "inside",
+            "showDetail": true,
+            "showDataShadow": true,
+            "realtime": true,
+            "start": 20,
+            "end": 80,
+            "orient": "vertical",
+            "zoomLock": false,
+            "filterMode": "filter"
+        }
+    ]
+};
+        chart_b8e2581c7d1f4c4f81ca2142c694e695.setOption(option_b8e2581c7d1f4c4f81ca2142c694e695);
+    </script>
+</body>
+</html>
