@@ -4,3 +4,7 @@
  本软件分为5个分卷压缩包，请下载时确保每个压缩包都有下载才能解压。
  
  软件解压密码及详细信息请参见博文：https://blog.csdn.net/MathThinker/article/details/103515424
+https://raw.githubusercontent.com/imcjp/MyJupyter/master/htmls/test.htm
+
+<p>
+<div style="width:100%; height:350px;border:none;text-align:center"> <iframe allowtransparency="yes" frameborder="0" width="300" height="300" src="https://raw.githubusercontent.com/imcjp/MyJupyter/master/htmls/test.htm"/> </div> </p>
